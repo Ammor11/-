@@ -13,7 +13,12 @@
         <div class="hot"></div>
       </ul>
       <div class="search">
-        <input type="text" placeholder="音乐/视频/电台/用户" />
+        <input
+          type="text"
+          v-model="keywords"
+          placeholder="音乐/视频/电台/用户"
+          @keydown="search"
+        />
         <div class="magnifier"></div>
       </div>
       <button class="creator">创作者中心</button>
@@ -23,31 +28,50 @@
   <div class="redbar"></div>
 </template>
 <script setup lang="ts">
-import { reactive } from "vue";
-const headTitle = reactive([
+import { ref } from "vue";
+import { _searchMusic } from "../api/search";
+interface ITitle {
+  title: string;
+  path: string;
+}
+
+let keywords = ref("");
+const getMusicList = async () => {
+  let res = await _searchMusic({
+    keywords: keywords.value,
+  });
+  console.log(res);
+};
+
+const search = (e: any) => {
+  if (e.keyCode == 13 && keywords.value != "") {
+    getMusicList();
+  }
+};
+
+const headTitle: ITitle[] = [
   { title: "发现音乐", path: "/findmusic" },
   { title: "我的音乐", path: "/mymusic" },
-  { title: "关注", path: "/follow" },
+  { title: "关注", path: "/followme" },
   { title: "商城", path: "/shopping" },
   { title: "音乐人", path: "/musician" },
   { title: "下载客户端", path: "/download" },
-]);
+];
 </script>
 
 <style lang="scss">
 .header {
   background-color: #242424;
-  width: 100%;
   height: 70px;
-  display: flex;
-  justify-content: center;
   box-sizing: border-box;
   border-bottom: 2px solid #000;
   user-select: none;
+  display: flex;
+  justify-content: center;
   .content {
     display: flex;
     align-items: center;
-    width: 1114px;
+    width: 1114px !important;
     .logo {
       width: 170px;
       height: 40px;
@@ -59,6 +83,7 @@ const headTitle = reactive([
       height: 100%;
       align-items: center;
       position: relative;
+      width: 520px !important;
       li {
         height: 100%;
         line-height: 70px;

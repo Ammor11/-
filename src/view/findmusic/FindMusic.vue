@@ -1,13 +1,6 @@
 <template>
-  <div class="findmusic">
-    <login-modal></login-modal>
-  </div>
+  <h1>发现音乐</h1>
 </template>
 
 <script setup lang="ts"></script>
-<style lang="scss" scoped>
-.findmusic {
-  width: 100%;
-  height: 100%;
-}
-</style>
+<style lang="scss" scoped></style>

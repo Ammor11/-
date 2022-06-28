@@ -17,19 +17,19 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import("../view/mymusic/MyMusic.vue"),
   },
   {
-    path: "/follow",
-    name: "follow",
-    component: () => import("../view/follow/Follow.vue"),
+    path: "/followme",
+    name: "followme",
+    component: () => import("../view/follow/FollowMe.vue"),
   },
   {
     path: "/shopping",
     name: "shopping",
-    component: () => import("../view/shopping/Shopping.vue"),
+    component: () => import("../view/shopping/ShopPing.vue"),
   },
   {
     path: "/musician",
     name: "musician",
-    component: () => import("../view/musician/Musician.vue"),
+    component: () => import("../view/musician/MusiCian.vue"),
   },
   {
     path: "/download",
