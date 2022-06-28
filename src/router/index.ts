@@ -16,6 +16,26 @@ const routes: Array<RouteRecordRaw> = [
     name: "mymusic",
     component: () => import("../view/mymusic/MyMusic.vue"),
   },
+  {
+    path: "/follow",
+    name: "follow",
+    component: () => import("../view/follow/Follow.vue"),
+  },
+  {
+    path: "/shopping",
+    name: "shopping",
+    component: () => import("../view/shopping/Shopping.vue"),
+  },
+  {
+    path: "/musician",
+    name: "musician",
+    component: () => import("../view/musician/Musician.vue"),
+  },
+  {
+    path: "/download",
+    name: "download",
+    component: () => import("../view/download/DownLoad.vue"),
+  },
 ];
 
 const router = createRouter({

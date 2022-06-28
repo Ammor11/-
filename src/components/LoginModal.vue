@@ -19,6 +19,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: fixed;
+  z-index: 10;
   .mask {
     width: 530px;
     height: 360px;
@@ -26,6 +28,8 @@
     overflow: hidden;
     background-color: #2d2d2d;
     display: flex;
+    margin-bottom: 170px;
+    user-select: none;
     .maskhead {
       height: 40px;
     }

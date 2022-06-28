@@ -4,9 +4,7 @@
   </div>
 </template>
 
-<script setup lang="ts">
-import LoginModal from "./componets/LoginModal.vue";
-</script>
+<script setup lang="ts"></script>
 <style lang="scss" scoped>
 .findmusic {
   width: 100%;

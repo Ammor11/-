@@ -45,7 +45,9 @@
     "parserOptions": {
       "ecmaVersion": 2020
     },
-    "rules": {}
+    "rules": {
+      "vue/multi-word-componet-names": 0
+    }
   },
   "browserslist": [
     "> 1%",
