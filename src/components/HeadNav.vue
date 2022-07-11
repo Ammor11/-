@@ -43,7 +43,7 @@ const getMusicList = async () => {
   console.log(res);
 };
 
-const search = (e: any) => {
+const search = (e: any): void => {
   if (e.keyCode == 13 && keywords.value != "") {
     getMusicList();
   }
@@ -100,6 +100,7 @@ const headTitle: ITitle[] = [
           color: #ccc;
           height: 100%;
           padding: 0 20px;
+          white-space: nowrap;
         }
         .active {
           color: #fff;
